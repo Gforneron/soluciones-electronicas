@@ -25,7 +25,7 @@ app.use((req, res, next) => {
   // Datos de contacto (se muestran en el footer). Reemplazalos por los reales.
   res.locals.datosContacto = {
     email: 'contacto@ejemplo.com',
-    telefono: '+54 351 2964812',
+    telefono: '+54 351 000 0000',
     direccion: 'Córdoba, Argentina',
     horario: 'Lunes a viernes, de 9 a 18 h',
   };

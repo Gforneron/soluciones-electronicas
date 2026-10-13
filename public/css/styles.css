@@ -117,6 +117,7 @@ a { color: var(--azul); }
 }
 .formulario .boton { margin-top: 1rem; justify-self: start; }
 .error { color: var(--error); margin: 0; font-size: .9rem; }
+.aviso.fallo { background: var(--blanco); border-left: 4px solid var(--error); padding: 1rem; max-width: 520px; }
 .aviso.ok { background: var(--blanco); border-left: 4px solid var(--azul); padding: 1rem; max-width: 520px; }
 
 /* Footer */

@@ -6,6 +6,9 @@
 <% if (enviado) { %>
   <p class="aviso ok" role="status">Mensaje enviado. Te respondemos a la brevedad.</p>
 <% } else { %>
+  <% if (locals.errorEnvio) { %>
+    <p class="aviso fallo" role="alert">No pudimos enviar tu consulta. Probá de nuevo en unos minutos.</p>
+  <% } %>
   <p class="lead">Contanos qué equipo o proyecto tenés y te respondemos por email.</p>
   <form method="POST" action="/contacto" class="formulario" novalidate>
     <label for="nombre">Nombre</label>
