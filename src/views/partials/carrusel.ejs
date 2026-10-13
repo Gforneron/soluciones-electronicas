@@ -1,0 +1,20 @@
+<div class="carrusel" data-carrusel role="region" aria-roledescription="carrusel" aria-label="Proyectos realizados">
+  <div class="carrusel-pista" data-pista tabindex="0">
+    <% proyectos.forEach(function (p, i) { %>
+      <figure class="slide" role="group" aria-roledescription="diapositiva" aria-label="<%= i + 1 %> de <%= proyectos.length %>">
+        <img src="<%= p.imagen %>" alt="<%= p.titulo %>" <%= i > 0 ? 'loading="lazy"' : '' %>>
+        <figcaption>
+          <p class="categoria"><%= p.categoria %></p>
+          <h3><%= p.titulo %></h3>
+          <p><%= p.descripcion %></p>
+        </figcaption>
+      </figure>
+    <% }) %>
+  </div>
+
+  <div class="carrusel-controles">
+    <button type="button" class="carrusel-btn" data-anterior aria-label="Proyecto anterior">&#8249;</button>
+    <div class="carrusel-puntos" data-puntos></div>
+    <button type="button" class="carrusel-btn" data-siguiente aria-label="Proyecto siguiente">&#8250;</button>
+  </div>
+</div>

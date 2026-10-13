@@ -1,0 +1,24 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<h1>Quiénes somos</h1>
+<p class="lead">
+  Somos un equipo de profesionales de la electrónica. Trabajamos con empresas y particulares
+  para reparar, diseñar y automatizar equipos. Acá podés reemplazar este texto por la historia del proyecto.
+</p>
+
+<h2>El equipo</h2>
+<div class="equipo">
+  <% equipo.forEach(function (persona) { %>
+    <article class="persona">
+      <img src="<%= persona.foto %>" alt="Foto de <%= persona.nombre %>">
+      <h3><%= persona.nombre %></h3>
+      <p class="categoria"><%= persona.rol %></p>
+      <p><%= persona.descripcion %></p>
+    </article>
+  <% }) %>
+</div>
+
+<p><a class="boton" href="/contacto">Escribinos</a></p>
+
+<%- include('partials/footer') %>

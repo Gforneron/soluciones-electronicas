@@ -1,0 +1,36 @@
+</main>
+<footer class="site-footer">
+  <div class="contenedor footer-grilla">
+    <div>
+      <p class="footer-marca"><%= nombreSitio %></p>
+      <p>Reparación, diseño y automatización electrónica para empresas y particulares.</p>
+    </div>
+
+    <nav aria-label="Pie de página">
+      <h2>Secciones</h2>
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/soluciones">Soluciones</a></li>
+        <li><a href="/nosotros">Nosotros</a></li>
+        <li><a href="/contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div>
+      <h2>Contacto</h2>
+      <p><a href="mailto:<%= datosContacto.email %>"><%= datosContacto.email %></a></p>
+      <p><%= datosContacto.telefono %></p>
+      <p><%= datosContacto.direccion %></p>
+      <p><%= datosContacto.horario %></p>
+    </div>
+  </div>
+
+  <div class="footer-legal">
+    <div class="contenedor">
+      <p>© <%= new Date().getFullYear() %> <%= nombreSitio %>. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+<script src="/js/main.js"></script>
+</body>
+</html>

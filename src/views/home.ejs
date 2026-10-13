@@ -1,0 +1,29 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<section class="hero">
+  <h1>Soluciones electrónicas que funcionan, de la placa al sistema completo.</h1>
+  <p>Reparamos, diseñamos y automatizamos. Contanos qué necesitás y lo resolvemos.</p>
+  <div class="acciones">
+    <a class="boton boton-claro" href="/soluciones">Ver soluciones</a>
+    <a class="boton boton-borde" href="/contacto">Pedir presupuesto</a>
+  </div>
+</section>
+
+<section>
+  <h2>Proyectos realizados</h2>
+  <p class="lead">Algunos trabajos que ya entregamos.</p>
+  <%- include('partials/carrusel', { proyectos: proyectos }) %>
+</section>
+
+<section>
+  <h2>Qué hacemos</h2>
+  <div class="grilla">
+    <% destacadas.forEach(function (s) { %>
+      <%- include('partials/tarjetaSolucion', { s: s }) %>
+    <% }) %>
+  </div>
+  <p><a href="/soluciones">Ver todas las soluciones</a> &middot; <a href="/nosotros">Conocé al equipo</a></p>
+</section>
+
+<%- include('partials/footer') %>

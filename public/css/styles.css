@@ -1,0 +1,134 @@
+:root {
+  --azul-oscuro: #14325c;
+  --azul: #1d4f91;
+  --azul-claro: #e8eef6;
+  --fondo: #f4f6f9;
+  --blanco: #ffffff;
+  --texto: #222b36;
+  --texto-suave: #55606e;
+  --borde: #d5dbe3;
+  --acento: #c8841a;
+  --error: #b3261e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3 { color: var(--azul-oscuro); line-height: 1.2; }
+h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 1.5rem 0 .75rem; }
+h2 { font-size: 1.6rem; margin: 3rem 0 .5rem; }
+a { color: var(--azul); }
+:focus-visible { outline: 3px solid var(--acento); outline-offset: 2px; }
+
+.contenedor { width: min(1080px, 100% - 2rem); margin-inline: auto; }
+
+/* Header */
+.site-header { background: var(--azul-oscuro); color: #fff; }
+.barra { display: flex; justify-content: space-between; align-items: center; padding: .9rem 0; gap: 1rem; flex-wrap: wrap; }
+.marca { display: flex; align-items: center; gap: .5rem; font-weight: 700; font-size: 1.1rem; color: #fff; text-decoration: none; }
+.site-header nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.site-header nav a { color: #dbe5f3; text-decoration: none; padding: .25rem 0; border-bottom: 2px solid transparent; }
+.site-header nav a:hover, .site-header nav a.activo { color: #fff; border-bottom-color: var(--acento); }
+
+/* Hero */
+.hero { background: var(--azul-oscuro); color: #fff; border-radius: 6px; padding: 3rem 2rem; margin-top: 1.5rem; }
+.hero h1 { color: #fff; margin-top: 0; max-width: 24ch; }
+.hero p { max-width: 55ch; font-size: 1.1rem; color: #dbe5f3; }
+.acciones { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+
+/* Botones */
+.boton {
+  display: inline-block; padding: .7rem 1.3rem; border: 2px solid var(--azul);
+  background: var(--azul); color: #fff; text-decoration: none; font: inherit; font-weight: 700;
+  border-radius: 4px; cursor: pointer;
+}
+.boton:hover { background: var(--azul-oscuro); border-color: var(--azul-oscuro); }
+.boton-claro { background: #fff; color: var(--azul-oscuro); border-color: #fff; }
+.boton-claro:hover { background: var(--azul-claro); border-color: var(--azul-claro); }
+.boton-borde { background: transparent; color: #fff; border-color: #fff; }
+.boton-borde:hover { background: rgba(255,255,255,.12); border-color: #fff; }
+
+.lead { font-size: 1.1rem; max-width: 62ch; color: var(--texto-suave); }
+.categoria { color: var(--acento); font-weight: 700; margin: 0; font-size: .9rem; }
+.lista { padding-left: 1.2rem; }
+.lista li { margin-bottom: .4rem; }
+
+/* Tarjetas */
+.grilla { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; margin: 1.5rem 0; }
+.tarjeta { background: var(--blanco); border: 1px solid var(--borde); border-top: 4px solid var(--azul); padding: 1.25rem; border-radius: 4px; }
+.tarjeta h3 { margin: .25rem 0 .5rem; font-size: 1.15rem; }
+.tarjeta h3 a { color: var(--azul-oscuro); text-decoration: none; }
+.tarjeta h3 a:hover { color: var(--azul); text-decoration: underline; }
+
+/* Carrusel */
+.carrusel { margin: 1.5rem 0; }
+.carrusel-pista {
+  display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+  border: 1px solid var(--borde); border-radius: 6px; background: var(--blanco);
+  scrollbar-width: none;
+}
+.carrusel-pista::-webkit-scrollbar { display: none; }
+.slide { flex: 0 0 100%; margin: 0; scroll-snap-align: start; display: grid; grid-template-columns: 1.2fr 1fr; }
+.slide img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; display: block; }
+.slide figcaption { padding: 2rem; align-self: center; }
+.slide h3 { font-size: 1.4rem; margin: .4rem 0 .75rem; }
+.slide p { margin: 0; color: var(--texto-suave); }
+.slide .categoria { margin-bottom: 0; color: var(--acento); }
+@media (max-width: 700px) {
+  .slide { grid-template-columns: 1fr; }
+  .slide img { min-height: 200px; height: 220px; }
+  .slide figcaption { padding: 1.25rem; }
+}
+
+.carrusel-controles { display: flex; justify-content: center; align-items: center; gap: 1rem; margin-top: .9rem; }
+.carrusel-btn {
+  width: 2.5rem; height: 2.5rem; border-radius: 50%; border: 2px solid var(--azul);
+  background: var(--blanco); color: var(--azul); font-size: 1.5rem; line-height: 1; cursor: pointer;
+}
+.carrusel-btn:hover { background: var(--azul); color: #fff; }
+.carrusel-puntos { display: flex; gap: .5rem; }
+.punto { width: .8rem; height: .8rem; border-radius: 50%; border: 2px solid var(--azul); background: transparent; padding: 0; cursor: pointer; }
+.punto[aria-current="true"] { background: var(--azul); }
+
+/* Equipo */
+.equipo { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin: 1.5rem 0 2rem; }
+.persona { background: var(--blanco); border: 1px solid var(--borde); border-radius: 6px; padding: 1.25rem; text-align: center; }
+.persona img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; margin-bottom: .75rem; }
+.persona h3 { margin: .25rem 0; }
+.persona p { color: var(--texto-suave); }
+.persona .categoria { color: var(--acento); }
+
+/* Formulario */
+.formulario { display: grid; gap: .4rem; max-width: 520px; margin: 1.5rem 0; }
+.formulario label { font-weight: 700; margin-top: .6rem; }
+.formulario input, .formulario textarea {
+  padding: .65rem; border: 1px solid #8a95a3; border-radius: 4px;
+  background: var(--blanco); color: var(--texto); font: inherit;
+}
+.formulario .boton { margin-top: 1rem; justify-self: start; }
+.error { color: var(--error); margin: 0; font-size: .9rem; }
+.aviso.ok { background: var(--blanco); border-left: 4px solid var(--azul); padding: 1rem; max-width: 520px; }
+
+/* Footer */
+main.contenedor { flex: 1 0 auto; padding-bottom: 2rem; }
+.site-footer { margin-top: 3rem; background: var(--azul-oscuro); color: #dbe5f3; font-size: .95rem; }
+.footer-grilla { display: grid; grid-template-columns: 1.5fr 1fr 1.3fr; gap: 2rem; padding: 2.5rem 0 2rem; }
+.site-footer h2 { color: #fff; font-size: 1.05rem; margin: 0 0 .75rem; }
+.site-footer p { margin: 0 0 .4rem; }
+.footer-marca { font-weight: 700; color: #fff; font-size: 1.1rem; }
+.site-footer ul { list-style: none; margin: 0; padding: 0; }
+.site-footer li { margin-bottom: .4rem; }
+.site-footer a { color: #dbe5f3; }
+.site-footer a:hover { color: #fff; }
+.footer-legal { border-top: 1px solid rgba(255,255,255,.18); padding: 1rem 0; font-size: .85rem; color: #b9c8de; }
+@media (max-width: 700px) { .footer-grilla { grid-template-columns: 1fr; gap: 1.5rem; } }

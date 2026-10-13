@@ -1,0 +1,13 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<h1>Soluciones</h1>
+<p class="lead">Elegí un servicio para ver qué incluye.</p>
+
+<div class="grilla">
+  <% soluciones.forEach(function (s) { %>
+    <%- include('../partials/tarjetaSolucion', { s: s }) %>
+  <% }) %>
+</div>
+
+<%- include('../partials/footer') %>

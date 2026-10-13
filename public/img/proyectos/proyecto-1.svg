@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="Imagen de ejemplo del proyecto 1">
+  <rect width="1200" height="600" fill="#1f3a5f"/>
+  <g fill="none" stroke="#ffffff" stroke-opacity=".25" stroke-width="4">
+    <path d="M0 150h300l40 40h220l40-40h600M0 300h200l40 40h400l40-40h520M0 450h500l40-40h660"/>
+    <rect x="470" y="210" width="260" height="180" rx="10" stroke-opacity=".6"/>
+    <path d="M510 210v-40M570 210v-40M630 210v-40M690 210v-40M510 390v40M570 390v40M630 390v40M690 390v40M470 250h-40M470 300h-40M470 350h-40M730 250h40M730 300h40M730 350h40" stroke-opacity=".6"/>
+  </g>
+  <g fill="#ffffff" fill-opacity=".35"><circle cx="300" cy="150" r="9"/><circle cx="640" cy="150" r="9"/><circle cx="240" cy="300" r="9"/><circle cx="960" cy="300" r="9"/><circle cx="540" cy="450" r="9"/></g>
+  <text x="600" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" fill="#ffffff" fill-opacity=".85">Proyecto 1</text>
+</svg>
